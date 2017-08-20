@@ -8,7 +8,7 @@ def isExist(animal):
     return animal in result
 
 
-with open('animal.csv', 'rb') as csvfile:
+with open('animal.csv', 'r') as csvfile:
     next(csvfile)
     spamreader = csv.reader(csvfile)
     for row in spamreader:
@@ -19,8 +19,10 @@ with open('animal.csv', 'rb') as csvfile:
         # check the key 'x' exist in result: isExist(x)#
         ################################################
         # Your Code Here!
+        if not isExist(animal):
+            result[animal] = []
+        result[animal].append(name)
 
-        
         # print("{} -> {} -> {}".format(name, weight, animal))
 
 
